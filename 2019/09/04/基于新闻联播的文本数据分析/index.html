@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>基于新闻联播的文本数据分析 - Raina</title>
+  
+    <meta name="keywords" content="文本分析,可视化">
+  
+  
+    <meta name="description" content="  ">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Raina">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+      基于新闻联播的文本数据分析
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>Mr. X</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>文本分析</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Sep 4, 2019</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h1 style="text-align:center"> 基于新闻联播的文本数据分析</h1> 
+
+<blockquote>
+<p><strong>本案例系中央财经大学应美玲友情提供</strong></p>
+</blockquote>
+<h2 id="一、研究背景与意义"><a href="#一、研究背景与意义" class="headerlink" title="一、研究背景与意义"></a>一、研究背景与意义</h2><p>有一档节目，在中国几乎无人不知，无人不晓，它就是CCTV的《新闻联播》。自1978年1月1日开始，《新闻联播》每天晚上七点准时在中央电视台及各省级电视台同步播出，时长为30分钟。这档新闻节目聚焦于政治、经济、科技、军事、外交、文化等主题，准确地给全国观众报道最新最及时的新闻。1982年，中央政府更是明文规定了重要的新闻必须在《新闻联播》中首先播出，这一规定揭示了《新闻联播》的重要地位。该节目宗旨为“宣传党和政府的声音，传播天下大事”。</p>
+<p>该档节目播出至今已经有四十余年的历史，它已经深入的渗透到了人们的生活中，甚至改变了人们的生活方式。通过观看《新闻联播》，我们可以了解到国家最新出台的政策，可以对当前国家经济形势有一个大致的了解，可以真正做到足不出户便已了解国家大事。《新闻联播》已经成为一个风向标和指明灯，它给老百姓们的生活带来了方向：对于投资者来说，观看《新闻联播》有助于他们敏锐的发现各种投资机会；对于大学生来说，观看《新闻联播》可以帮助他们明晰行业的发展情况，从而有助于做出就业的选择；对于政府官员来说，《新闻联播》在很大程度上明确了他们未来的工作方向，若提前得知并做好充足准备，有助于他们的政绩表现并提高晋升的概率；甚至对于外国友人或者外企来说，想要深入了解中国，《新闻联播》是必不可少的了解渠道之一。</p>
+<p>由此可以看到，《新闻联播》对于我们所有人来说价值都是巨大的，它与我们的切身利益息息相关，密不可分。但是，却很少有人去真正研究该档新闻节目，我认为其中主要有以下两方面原因：第一，因为《新闻联播》每天都会准时播出，人们已经司空见惯习以为常，反倒忽略了其中巨大的价值，就像空气对于人类的作用一样；第二，《新闻联播》是以文本数据的形式存在，不像传统的数值数据，方便统计分析和数学建模。</p>
+<h2 id="二、样本选取与数据来源"><a href="#二、样本选取与数据来源" class="headerlink" title="二、样本选取与数据来源"></a>二、样本选取与数据来源</h2><p>本文所使用的新闻联播文本数据来自于Tushare金融大数据社区 <a href="https://tushare.pro/" target="_blank" rel="noopener">1</a>，获取了2006年6月15日至2019年7月2日的全部新闻联播文本数据，一共有77561条观测。每一天平均有10至25条不等的新闻。每一条观测有三列，分别是日期（date）、标题（title）和内容（content）。例如，表1是本文样本数据集中的两条观测。本文主要是对content的文本数据进行分析。</p>
+<center>表 1 部分样本数据</center>
+
+<img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image001.png" alt="img" style="zoom:67%;"> 
+
+<h2 id="三、数据描述性分析"><a href="#三、数据描述性分析" class="headerlink" title="三、数据描述性分析"></a>三、数据描述性分析</h2><p>由于文本数据没有具体的数值，所以只能通过Python对新闻联播文本数据进行分词，然后做词频统计。利用得到的词频表进行后续一系列的描述分析，从而将新闻联播的文本数据转为可视化的图表。</p>
+<h3 id="（一）新闻联播词云图"><a href="#（一）新闻联播词云图" class="headerlink" title="（一）新闻联播词云图"></a>（一）新闻联播词云图</h3><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image003.png" alt="img" style="zoom: 67%;">
+
+<center>图 1 新闻联播词云图</center>
+
+<p>从图1中可以看到，《新闻联播》中最经常提到的词语是发展、中国、经济、合作、习近平、建设、企业、美国、文化等，这些高频词语的出现也正好契合了《新闻联播》的主旨——即聚焦于国内经济发展建设、外交、文化等方面。</p>
+<h3 id="（二）各省份受关注情况"><a href="#（二）各省份受关注情况" class="headerlink" title="（二）各省份受关注情况"></a>（二）各省份受关注情况</h3><p>通常情况下，某个省份越受到中央政府的重视和关注，那么它在新闻联播中被提及的次数就越多。基于这样的规律，在统计各个省份和直辖市的词频分布之后，绘制了整体情况下的各省份在新闻联播中出现的频数柱状图和某些省份被提及频数随着时间的变化图，如图2至图12所示。</p>
+<img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image005.png" alt="img" style="zoom:60%;">
+
+<center>图 2 各省份被提及频数柱状图</center>
+
+<p>从图2中可以看到，从2006年至2019年这14年时间里，上海被提到的次数最多，超过了一万次；其次是香港和北京，分别被提到了7200次和6640次。这三个城市在中国的地位也是相当重要的：北京是中国的首都；上海是著名的金融中心；香港则是重要的外汇交易中心和人民币离岸交易中心。被提到次数最少的三个省份分别是山西、青海和宁夏，可以认为这三个省份得到的关注相对较少。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image008.png" alt="img"></p>
+<center>图 3 上海被提及频数的时间分布图</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image010.png" alt="img"></p>
+<center>图 4 北京被提及频数的时间分布图</center>
+
+<p> 上海和北京都是中国最重要的两个城市。从图3中可以看到，每年上海被提及的次数都在500次以上，期间在2010年达到峰值，这是因为2010年在上海举行了世博会。从图5中看到，2006年至2008年，北京被提到的次数逐年增多，并在2008年达到峰值，这是因为2008年北京成功举办了奥运会；但是2008年之后，北京被提到的次数逐年下降，但平均值也在300次左右。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image012.png" alt="img"></p>
+<center>图 5 内蒙古被提及频数的时间分布图</center>
+
+<p> 内蒙古作为中国的一个自治区，主要生活着蒙古族的人民群众。从图5中可以看到，2007年和2017年内蒙古被提到的次数达到了两个峰值，这主要是对应着内蒙古自治区成立的60和70周年。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image014.png" alt="img"></p>
+<center>图 6 香港被提及频数的时间分布图</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image016.png" alt="img"></p>
+<center>图 7 澳门被提及频数的时间分布图</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image018.png" alt="img"></p>
+<center>图 8 台湾被提及频数的时间分布图</center>
+
+<p>香港、澳门和台湾作为曾经的殖民地，回归祖国后自然受到中央政府的许多关注。从图6中可以看到，2007年和2017年香港出现在新闻联播的次数达到峰值，其中2007年香港被提到的次数多达1513次，这是因为2007年和2017年分别是香港回归祖国的十周年和二十周年。从2007年提及香港1513次，可以看出我国对回归后的香港十分重视，以及对香港回归喜悦之极。澳门的情况也是类似的，图7中2009年和2014年分别对应着澳门回归祖国的十周年和十五周年，这两年新闻联播提及澳门的次数也达到了平时的两倍。图8中台湾在2007年和2009年被新闻联播提到的次数比较多，这是因为在这两个时间段内，台湾的政局比较动荡。一直以来，台湾问题就比较具有政治敏感性，作为官方媒体的新闻联播自然对台湾岛保持着较高的关注度。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image020.png" alt="img"></p>
+<center>图 9 四川被提及频数的时间分布图</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image022.png" alt="img"></p>
+<center>图 10 青海被提及频数的时间分布图</center>
+
+<p> 四川省和青海省在历史上都曾经发过地震。从图9中可以看到，2008年5月12日汶川发生8.0级地震，于是2008年四川省被新闻联播提及1552次；2010年4月14日青海玉树发生7.1级地震，当年新闻联播提及到青海374次。从图9和图10中可以看到，中央政府对地震灾区是及其关注和重视的，尤其是汶川地震，因为汶川地震是中国人民共和国成立以来最严重的一次地震。在汶川地震后的几年里，中央政府一直致力于灾后重建，从2009年到2014年四川省一直保持着较高的提及频率便可以看出来。结合图1来看，从2006年-2019年，四川总体上被提到的次数仅低于上海香港和北京。现如今，四川省会成都市已经成功跻身新一线城市，可见汶川地震带给四川的影响在中央政府的努力下已经消失殆尽。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image024.png" alt="img"></p>
+<center>图 11 新疆被提及频数的时间分布图</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image026.png" alt="img"></p>
+<center>图 12 西藏被提及频数的时间分布图</center>
+
+<p> 新疆和西藏是我国五个自治区之二，主要生活着维吾尔族和藏族人民。新疆自治区于1955年成立，西藏自治区则于1965年成立。2015年分别对应着自治区成立的60和50周年，所以被新闻联播提到的次数达到了一个小高峰。从图11中可以看到，2009年新疆被提到了843次，这是因为当年新疆发生了极其严重的震惊全国的犯罪事件。图12中显示着2009年西藏被提到了985次，这是因为当年确定了西藏百万农奴解放纪念日。</p>
+<h3 id="（三）中国外交情况"><a href="#（三）中国外交情况" class="headerlink" title="（三）中国外交情况"></a>（三）中国外交情况</h3><p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image028.png" alt="img"></p>
+<center>图 13 各国被提及的百分比</center>
+
+<p>外交一直是新闻联播的一个重要板块。通过词频分布，我们可以了解到中国和哪些国家往来密切。从图13中可以看到，新闻联播里提到美国的占比最多，达到22.81%。这说明我国还是十分重视中美关系，因为中国和美国一个是人口大国，一个是高度发达的超级强国，两个国家之间已经深深地利益相关。除此之外，中国和俄罗斯、日本的联系也十分的密切。叙利亚和伊朗因为战乱长期动荡不安，引起了我国的关注。</p>
+<h3 id="（四）各高校被提及情况"><a href="#（四）各高校被提及情况" class="headerlink" title="（四）各高校被提及情况"></a>（四）各高校被提及情况</h3><p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image030.png" alt="img"></p>
+<center>图 14 各高校被提及的百分比</center>
+
+<p>通过统计新闻联播中提到的各高校的次数，可以总结出我国比较重视的一些高校，从而可以给刚高考完的学生填志愿提供一定的依据。从图14中可以看到，清华北大被提到的占比和为41.07%，这说明我国最顶尖的两所学府，受到中央非一般的重视。中国人民大学、北京师范大学和复旦大学紧随其后。一个很明显的现象是，在图14中，几乎所有的大学都是理工类或综合类，只有中国政法大学一个例外。这也说明了中央政府对综合类和理工类的高校的重视程度要远高于偏文科类的高校。</p>
+<h3 id="（五）新闻热词分布情况"><a href="#（五）新闻热词分布情况" class="headerlink" title="（五）新闻热词分布情况"></a>（五）新闻热词分布情况</h3><p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image032.png" alt="img"></p>
+<center>图 15 一带一路分布情况</center>
+
+<p>​       自从习近平主席在2013年提出“新丝绸之路经济带”后，“一带一路”这个词的热度便一直高居不下。从图15中可以看到，2017年“一带一路”这个词被提到了1463次，虽然后续呈下降趋势，但仍然保持着超高的提及频率。这也表明政府对“一带一路”建设高度重视。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image034.png" alt="img"></p>
+<center>图 16 5G分布情况</center>
+
+<p>从图16中可以看到，5G这个词语在2014年开始出现，但是一直到2018年，5G被提到的次数都十分的少。然而在2019年，5G出现的次数却有了一个质的飞跃，从31次迅速上升到147次。这是因为2019年华为宣布掌握了5G技术。这一消息迅速引起了政府的注意，可见我国对科技的重视程度。根据图16可以合理的预测，在未来的几年里，5G将会变得越来越重要。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image036.png" alt="img"></p>
+<center>图 17 转型、升级分布情况</center>
+
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image038.png" alt="img"></p>
+<center>图 18 创新、改革分布情况</center>
+
+<p>从图17、18中可以看到，自从党的十八大之后，经济转型、行业升级、改革创新这些词在新闻联播中被提起的越来越频繁，其中都纷纷在2016年达到了最高点。党中央提出经济新常态，只有对经济转型，对行业升级，对科技改革创新才能达到这一目标。</p>
+<h3 id="（六）中国宏观经济情况"><a href="#（六）中国宏观经济情况" class="headerlink" title="（六）中国宏观经济情况"></a>（六）中国宏观经济情况</h3><p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image040.png" alt="img"></p>
+<center>图 19 三大产业被提及情况</center>
+
+<p>从图19中可以看到，新闻中提到农业的次数远远高于工业和服务业，这说明中央政府还是最关注农业的发展情况，这也和目前的国情相符，当下中国还是以第一产业为主。在2012年之前，农业和工业存在着一个此消彼长的负相关关系，这可能是因为年轻人纷纷选择外出务工而非务农，使得工业增长而农业下降；2012年之后，工业和农业呈现同增同长的关系，这可能是因为工业的发展也提高了农业的效率，从而间接促进农业的发展。</p>
+<p><img src="/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image042.png" alt="img"></p>
+<center>图 20 投资、消费、出口被提及情况</center>
+
+<p>投资、消费和出口被称为拉动经济增长的三驾马车。从图20中看到，投资一直以来都是我国经济增长的主要因素，期间虽然不停的起伏震荡，但中央仍给予了足够的重视。在2009年，全世界遭受金融危机时，我国开始强调消费、内需来拉动经济的增长。三驾马车的格局已经从2006年的投资、出口、消费转变为2019年的投资、消费、出口。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://raina-fighting.github.io/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/>http://raina-fighting.github.io/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-10T16:35:24+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 10, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>文本分析</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>可视化</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://raina-fighting.github.io/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=基于新闻联播的文本数据分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://raina-fighting.github.io/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=基于新闻联播的文本数据分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://raina-fighting.github.io/2019/09/04/%E5%9F%BA%E4%BA%8E%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD%E7%9A%84%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=基于新闻联播的文本数据分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/09/05/%E6%9C%9F%E5%88%8A%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>期刊数据抓取</p>
+                <p class='content'>期刊数据爬取
+
+
+本案例系同学共同成果，此部分仅限爬虫代码
+
+
+《统计研究》于1984年创刊，月刊，是由中华人民共和国国家统计局主管、中国统计学会和中华人民共和国国家统计局统计科学研究所主办的学...</p>
+              </a>
+            
+            
+              <a class='next' href='/2019/09/03/%E4%B8%96%E7%95%8C%E9%93%B6%E8%A1%8C%E5%80%9F%E8%B4%B7%E6%AC%BE%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/'>
+                <p class='title'>世界银行借贷款情况分析<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>世界银行借贷款情况分析
+
+
+ 本案例得到中央财经大学周萌和姚沛君友情支援
+
+本次案例从宏观至微观对数据集中的重要信息进行分析：首先从宏观层面对全球各个地区的借贷款情况及其资金投入方向进行考察，随...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '基于新闻联播的文本数据分析',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、研究背景与意义"><span class="toc-text">一、研究背景与意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、样本选取与数据来源"><span class="toc-text">二、样本选取与数据来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据描述性分析"><span class="toc-text">三、数据描述性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）新闻联播词云图"><span class="toc-text">（一）新闻联播词云图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）各省份受关注情况"><span class="toc-text">（二）各省份受关注情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）中国外交情况"><span class="toc-text">（三）中国外交情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）各高校被提及情况"><span class="toc-text">（四）各高校被提及情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（五）新闻热词分布情况"><span class="toc-text">（五）新闻热词分布情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（六）中国宏观经济情况"><span class="toc-text">（六）中国宏观经济情况</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作為主題，總訪問量為
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com/" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

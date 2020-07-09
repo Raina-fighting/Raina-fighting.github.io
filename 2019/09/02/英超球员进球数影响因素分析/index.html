@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>英超球员进球数影响因素分析 - Raina</title>
+  
+    <meta name="keywords" content="R,可视化,回归分析,因子分析">
+  
+  
+    <meta name="description" content="  ">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Raina">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/">
+      英超球员进球数影响因素分析
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>Mr. X</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>结构化数据</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Sep 2, 2019</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h1 style="text-align:center">英超球员进球数影响因素分析</h1>
+## 一、背景介绍
+
+<p>2018世界杯闭幕不久，引起全民足球热潮。英格兰足球超级联盟简称英超，是英格兰足球总会属下的职业足球联赛，欧洲五大联赛之一，由20支球队组成。英超凭借快节奏、竞争激烈、强队众多，成为世界上最受欢迎的体育赛事。本案例通过分析英超球员基本信息和球场表现的情况，找到影响其进球数的因素进行建模。</p>
+<h2 id="二、数据来源与说明"><a href="#二、数据来源与说明" class="headerlink" title="二、数据来源与说明"></a>二、数据来源与说明</h2><p>本案例使用数据为2012到2013赛季的英超赛事数据。数据集包含16支球队的166名球员在此赛季的场上表现和下个赛季的进球数。数据说明表见表1。</p>
+<center>表1：英超数据说明表</center>
+![png](英超球员进球数影响因素分析/image001.png)
+
+
+<h2 id="三、探索性分析"><a href="#三、探索性分析" class="headerlink" title="三、探索性分析"></a>三、探索性分析</h2><h3 id="（一）因变量分析"><a href="#（一）因变量分析" class="headerlink" title="（一）因变量分析"></a>（一）因变量分析</h3><p>1.进球数分布</p>
+<p>如图1，下个赛季即2013-2014赛季贡献了500个进球。其中，大部分球员进球数较少甚至为0，只有个别球员能力较强球队中担当突出，进球机会多进球数多。其中，苏亚雷斯达到31个，斯图里奇为21个，亚亚·图雷紧随其后20个。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image002.png" alt="png"></p>
+<center>图1：下一赛季进球数分布条形图</center>
+2.进球数与场上位置
+
+<p>本案例166名球中有86名中场，50名后卫，30名前锋球员。在2012-2013赛季共贡献了624个进球。其中，前锋的人均进球数和最大进球数最高，30名前锋共同贡献了264个进球，占42.3%。进球数最高的前锋是曼联的范佩西；最高的中锋是阿斯顿维拉的本特克。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image003.png" alt="png"></p>
+<center>图2：本赛季各场上位置进球数</center>
+3.进球数与年龄段
+
+<p>足球是高对抗项目，对运动员身体素质要求较高，从数据集中可知，运动员年龄分布在20-40之间，而高于35岁的只有两名球员。结合图3，年龄段在25-30之间的球员进球数最高，其中一半的前锋球员处在这个年龄段，该年龄段属于前锋球员创造价值的最佳阶段。30-40年龄段平均进球数最高，其中中场的贡献最高，30-40岁是中场球员蓄积经验后的成熟时期。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image006.png" alt="png"></p>
+<center>图3：不同年龄段进球数</center>
+4.本赛季与下赛季进球数
+
+<p>​        球员在连续的赛季中的表现是很相似的，如图4，本赛季进球数多的球员在下一个赛季同样表现优秀。如利物浦的苏亚雷斯。但也有少数球员两个赛季表现存在较大差异，如范佩西，本赛季进球最多，下个赛季缩减到一半以下。范佩西年龄为30，在球员中已经属于比较高的，更是30岁及以上仍在打前锋的少数球员之一。此外，也可以看出，前锋位置对进球数平均贡献最大。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image008.png" alt="png"></p>
+<center>图4：球员下一赛季与本赛季进球数的相关图</center>
+### （二）变量相关性分析
+
+<p>选择与运动员场上表现，分为射门、亮点、犯规表现，相关的22个指标，相关系数矩阵图如图5。部分变量间存在较强的相关性，且变量间可能存在一些结构性特征。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image011.png" alt="png"></p>
+<center>图5：相关系数矩阵图</center>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##探索性分析</span></span><br><span class="line"><span class="comment">#进球数分布</span></span><br><span class="line">summary(mdata$下一年进球)</span><br><span class="line">barplot(table(mdata$下一年进球),ylab=<span class="string">"下一年进球"</span>,col=<span class="string">"lightblue"</span>,main=<span class="string">""</span>)</span><br><span class="line"><span class="comment">#场上位置与总进球数</span></span><br><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(mdata,aes(x=factor(位置),y=进球))+</span><br><span class="line">  geom_bar(stat=<span class="string">"identity"</span>,fill=<span class="string">"lightblue"</span>)+</span><br><span class="line">  xlab(<span class="string">"位置"</span>)+ylab(<span class="string">"本赛季总进球数"</span>)</span><br><span class="line"><span class="comment">#年龄与总进球数</span></span><br><span class="line">mdata$年龄分段=cut(mdata$年龄,c(<span class="number">19</span>,<span class="number">25</span>,<span class="number">30</span>,<span class="number">40</span>))<span class="comment"># 48 84 34 </span></span><br><span class="line">ggplot(mdata,aes(x=年龄分段,fill=位置,y=进球))+theme_bw()+</span><br><span class="line">  theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())+</span><br><span class="line">  geom_bar(stat=<span class="string">"identity"</span>)+</span><br><span class="line">  xlab(<span class="string">"年龄分段"</span>)+ylab(<span class="string">"本赛季总进球数"</span>)</span><br><span class="line"><span class="comment">#本赛季与下赛季进球数</span></span><br><span class="line">ggplot(mdata,aes(x=进球,y=下一年进球,colour=位置))+geom_point(size=<span class="number">2.5</span>)+theme_bw()+</span><br><span class="line">  theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())+</span><br><span class="line">  annotate(<span class="string">"text"</span>,x=<span class="number">23</span>,y=<span class="number">31</span>,label=<span class="string">"苏亚雷斯"</span>)+</span><br><span class="line">  annotate(<span class="string">"text"</span>,x=<span class="number">26</span>,y=<span class="number">12</span>,label=<span class="string">"范佩西"</span>)</span><br><span class="line"><span class="comment">#变量相关性分析</span></span><br><span class="line">mdata1&lt;-mdata[<span class="number">10</span>:<span class="number">33</span>]</span><br><span class="line">mdata2&lt;-mdata1[,-c(<span class="number">11</span>,<span class="number">23</span>)]</span><br><span class="line"><span class="keyword">library</span>(corrplot)	</span><br><span class="line">M=cor(mdata2)</span><br><span class="line">corrplot(M,type=<span class="string">"lower"</span>,tl.pos=<span class="string">"b"</span>,tl.cex=<span class="number">0.7</span>,tl.col = <span class="string">"black"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、模型建立"><a href="#四、模型建立" class="headerlink" title="四、模型建立"></a>四、模型建立</h2><h3 id="（一）建模思路"><a href="#（一）建模思路" class="headerlink" title="（一）建模思路"></a>（一）建模思路</h3><p>本案例考察22个影响因素对因变量下一个赛季进球数的影响，由于变量数目较多，部分变量间存在较强的相关关系，所以首先对变量降维。变量间存在某一些结构性特征，希望能寻求反映某方面信息的一组公共潜在因素。最终选择因子分析对数据首先进行降维。</p>
+<h3 id="（二）因子分析"><a href="#（二）因子分析" class="headerlink" title="（二）因子分析"></a>（二）因子分析</h3><p>本案例首先对所有22个变量提取3个公因子，发现因子旋转后因子载荷矩阵中，变量红牌和乌龙球在公因子上的区分度较差，同时从相关系数矩阵也可以发现这两个变量与其他变量的相关性比较弱，与下一年进球数的相关系数分别为-0.001,0.033，影响程度很小，考虑删除这两个变量做分析。</p>
+<p>对20个变量做因子分析，碎石图6显示，前四个主因子的特征根大于平行分析的结果，结合特质根大于1，选择三个主因子。经过因子旋转后，三个公因子特征根均大于1，合计可以解释60%的变差。载荷矩阵见表2，其中隐去了小值系数。</p>
+<p><img src="/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/image013.png" alt="png"></p>
+<center>图6：公共因子碎石图</center>
+<center> 表2：因子分析结果汇总表</center>
+![png](英超球员进球数影响因素分析/image0021.png)
+
+<p>由表2载荷矩阵可知，公因子1表示进攻因子，反映球员辅助进攻及射门技能；公因子2表示后卫因子，辅助解围维控全场格局争取有利优势；公因子3表示防守因子，与中场传球拦截相关。共同度大都在0.4以上，三个公因子对各个变量的解释程度较好。</p>
+<p>根据因子得分分别找出在三个因子上得分最高的10名球员，如表3。其中，进攻力较强的大多是前锋，后卫力较强的都是后卫，防守力较强的大多是中场。与不同位置球员功能相关，符合认知。</p>
+<center>表3：各因子表现较好的球员</center>
+![png](英超球员进球数影响因素分析/image0023.png)
+
+<h3 id="（三）回归分析"><a href="#（三）回归分析" class="headerlink" title="（三）回归分析"></a>（三）回归分析</h3><p>本案例中要预测的因变量是下一赛季进球数，球员的进球数可以认为服从泊松分布。建立泊松回归模型：</p>
+<center>log(下一年进球数)~位置+年龄+进攻因子+后卫因子+防守因子</center>
+模型中使用的自变量有球员位置、球员年龄分段、上述三个因子。模型的偏差为489.18，空模型的偏差为901.07，可以认为模型是显著的。其中，前锋位置相比后卫可以提升进球数，中场提升幅度相比较小。球员的年龄段在25-30之间能力最强，球场上贡献的进球数最多。另外三个主因子中，进攻因子和防守因子对进球数都有正的影响，进球更多地会发生在球员进攻射门、传球带球的场合下，相比而言后卫的功能更多是防守解围，进球机会相对比较小。
+
+<center>表4：回归系数结果表</center>
+![png](英超球员进球数影响因素分析/image004.png)
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##因子分析</span></span><br><span class="line"><span class="comment">#因子数量的选择</span></span><br><span class="line"><span class="keyword">library</span>(psych)</span><br><span class="line">fa.parallel(scale(mdata2),fa=<span class="string">"fa"</span>,main=<span class="string">"碎石图"</span>)</span><br><span class="line"><span class="comment">#估计因子载荷</span></span><br><span class="line">fa1=fa(mdata2,nfactors=<span class="number">3</span>,rotate=<span class="string">'none'</span>,fm=<span class="string">'pa'</span>);fa1</span><br><span class="line">fa2=fa(mdata2,nfactors=<span class="number">3</span>,rotate=<span class="string">"varimax"</span>,fm=<span class="string">"pa"</span>);fa2 <span class="comment">#0.54</span></span><br><span class="line">mdata3&lt;-mdata2[,-c(<span class="number">7</span>,<span class="number">22</span>)]</span><br><span class="line">dim(mdata3)</span><br><span class="line">fa.parallel(scale(mdata3),fa=<span class="string">"fa"</span>,main=<span class="string">"碎石图"</span>)</span><br><span class="line">fa3=fa(mdata3,nfactors=<span class="number">3</span>,rotate=<span class="string">"varimax"</span>,fm=<span class="string">"pa"</span>);fa3</span><br><span class="line"><span class="comment">#计算因子得分</span></span><br><span class="line">mdata$scores1&lt;-fa3$scores[,<span class="number">1</span>]<span class="comment">#公因子1得分</span></span><br><span class="line">mdata$scores2&lt;-fa3$scores[,<span class="number">2</span>]<span class="comment">#公因子2得分</span></span><br><span class="line">mdata$scores3&lt;-fa3$scores[,<span class="number">3</span>]<span class="comment">#公因子3得分</span></span><br><span class="line">head(mdata[order(mdata$scores1,decreasing = <span class="literal">T</span>),c(<span class="number">1</span>,<span class="number">5</span>)],<span class="number">10</span>)<span class="comment">##进攻能力前6</span></span><br><span class="line">head(mdata[order(mdata$scores2,decreasing = <span class="literal">T</span>),c(<span class="number">1</span>,<span class="number">5</span>)],<span class="number">10</span>)<span class="comment">##解围能力前6</span></span><br><span class="line">head(mdata[order(mdata$scores3,decreasing = <span class="literal">T</span>),c(<span class="number">1</span>,<span class="number">5</span>)],<span class="number">10</span>)<span class="comment">##防守能力前6</span></span><br><span class="line"><span class="comment">#回归分析</span></span><br><span class="line">fit &lt;- glm(下一年进球~位置+年龄分段+scores1+scores2+scores3, family=poisson(link=log), data=mdata)</span><br><span class="line">summary(fit)</span><br><span class="line">step(fit)</span><br><span class="line">anova(glm(下一年进球~<span class="number">1</span>, family=poisson(link=log), data=mdata),fit)</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>本案例分析了英超联盟16只球队166名球员在2012-2013的表现情况，并选择合适的变量对下一赛季的进球数做预测。可以发现，球员位置和球员年龄段是影响进球数的两个自身因素。一般地，处于前锋位置的球员，承担进攻和射门任务，有更多进球机会，进球均值高；年龄段在25-30之间的球员，拥有一定的比赛经验，自身能力和身体素质处于最优状态，更容易在球场上进球。关于球员在球场上的表现，本案例使用因子分析，从20个因素中选取3个主因子，分别表示进攻因子，后卫因子，防守因子，三个因子对进球数都有显著的影响，其中进攻力和防守力呈正相关，后卫力更多地与球员的防守解围相关联，进球机会较少，相比对进球数有负的影响。</p>
+<blockquote>
+<p><strong>获取数据可留言笔者</strong></p>
+</blockquote>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://raina-fighting.github.io/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/>http://raina-fighting.github.io/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-09T17:33:12+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 9, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/R/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>R</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>可视化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>回归分析</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>因子分析</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://raina-fighting.github.io/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/&title=英超球员进球数影响因素分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://raina-fighting.github.io/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/&title=英超球员进球数影响因素分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://raina-fighting.github.io/2019/09/02/%E8%8B%B1%E8%B6%85%E7%90%83%E5%91%98%E8%BF%9B%E7%90%83%E6%95%B0%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/&title=英超球员进球数影响因素分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/09/03/%E4%B8%96%E7%95%8C%E9%93%B6%E8%A1%8C%E5%80%9F%E8%B4%B7%E6%AC%BE%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>世界银行借贷款情况分析</p>
+                <p class='content'>世界银行借贷款情况分析
+
+
+ 本案例得到中央财经大学周萌和姚沛君友情支援
+
+本次案例从宏观至微观对数据集中的重要信息进行分析：首先从宏观层面对全球各个地区的借贷款情况及其资金投入方向进行考察，随...</p>
+              </a>
+            
+            
+              <a class='next' href='/2019/09/01/%E6%95%B0%E6%8D%AE%E6%B5%81%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83%E5%B9%B6%E7%94%A8%E4%BA%8E%E6%96%87%E6%9C%AC%E4%B8%BB%E9%A2%98%E6%8C%96%E6%8E%98/'>
+                <p class='title'>数据流聚类算法比较并用于文本主题挖掘<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>  数据流聚类算法比较并用于文本主题挖掘  
+## 分析提要
+
+数据流的聚类要求能实时计算，对聚类变化进行跟踪。Birch 算法是数据流中一个重要的层次聚类法，能够用一遍扫描有效地进行聚类。
+
+...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '英超球员进球数影响因素分析',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据来源与说明"><span class="toc-text">二、数据来源与说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、探索性分析"><span class="toc-text">三、探索性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）因变量分析"><span class="toc-text">（一）因变量分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、模型建立"><span class="toc-text">四、模型建立</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）建模思路"><span class="toc-text">（一）建模思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）因子分析"><span class="toc-text">（二）因子分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）回归分析"><span class="toc-text">（三）回归分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、结论"><span class="toc-text">五、结论</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作為主題，總訪問量為
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com/" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

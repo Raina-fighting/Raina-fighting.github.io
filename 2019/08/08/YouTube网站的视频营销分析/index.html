@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>YouTube网站的视频营销分析 - Raina</title>
+  
+    <meta name="keywords" content="python,文本分析,话题挖掘,情感分析">
+  
+  
+    <meta name="description" content="文本分析的案例系列">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Raina">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/">
+      YouTube网站的视频营销分析
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>Mr. X</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/%E8%AF%9D%E9%A2%98%E6%8C%96%E6%8E%98/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>文本分析/话题挖掘</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Aug 8, 2019</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h1 style="text-align:center">  基于YouTube网站的视频营销分析  </h1>
+## 一、背景介绍与数据描述  
+
+<p>热门YouTube视频  </p>
++  YouTube[2]（世界著名的视频分享网站）维护着该平台上热门视频的列表。 根据Variety杂志的报道，“为了确定年度最热门的视频，YouTube使用了多种因素，包括衡量用户互动（观看次数，分享，评论和喜欢）。 请注意，它们不是整个日历年中观看次数最多的视频”。
++  数据描述YouTube热门视频的每日记录[1]。包括美国、英国、德国、加拿大和法国（US，GB，DE，CA，FR）五个区域，每天最多可列出200个热门视频。
++  每个区域的数据都在一个单独的文件中，数据字段包括视频标题、频道标题、发布时间、标签、观看次数、喜欢和不喜欢次数、评论次数和描述。数据还包括类别id，该字段在不同区域之间变化。 要检索特定视频的类别，需要在关联的JSON中找到它。
++  本文对美国区域YouTube视频观看进行深入分析
+[1]: https://www.kaggle.com/datasnaek/youtube-new/data "通过YouTube API获取"
+[2]: https://github.com/DataSnaek/Trending-YouTube-Scraper
+<p>分析思路  </p>  
+1. 影响力分析--随时间的统计分析
+2. 情感分析 
+3. 主题分析  
+4. YouTube视频分类（待完善）
+5. 影响受欢迎程度的因素（待完善）
+
+
+<h2 id="二、描述分析"><a href="#二、描述分析" class="headerlink" title="二、描述分析"></a>二、描述分析</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa = pd.read_csv(<span class="string">"USvideos.csv"</span>)  <span class="comment">#(18973, 16)</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 统一数据格式</span></span><br><span class="line">df_usa[<span class="string">'trending_date'</span>] = pd.to_datetime(df_usa[<span class="string">'trending_date'</span>], format=<span class="string">'%y.%d.%m'</span>)</span><br><span class="line">df_usa[<span class="string">'publish_time'</span>] = pd.to_datetime(df_usa[<span class="string">'publish_time'</span>], format=<span class="string">'%Y-%m-%dT%H:%M:%S.%fZ'</span>)</span><br><span class="line">df_usa.insert(<span class="number">5</span>, <span class="string">'publish_date'</span>, df_usa[<span class="string">'publish_time'</span>].dt.date)</span><br><span class="line">df_usa[<span class="string">'publish_time'</span>] = df_usa[<span class="string">'publish_time'</span>].dt.time</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 查看缺失</span></span><br><span class="line">df_usa.isnull().sum()/df_usa.shape[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 数据描述分析</span></span><br><span class="line">df_usa.describe()</span><br><span class="line">df_usa.describe(include=[np.object])</span><br><span class="line">df_usa.describe(include=[np.bool])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df_usa[<span class="string">'video_error_or_removed'</span>].loc[df_usa[<span class="string">'video_id'</span>]==<span class="string">'kZete48ZtsY'</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>14822    False
+15061    False
+15258    False
+15499     True
+15755     True
+15980     True
+Name: video_error_or_removed, dtype: bool</code></pre>
+<p>大多数视频不会存在[评论禁用][评级禁用][视频错误]的问题，少数视频可能如此，而甚少的视频在作为热门视频期间会发生状态的变化，如video id为kZete48ZtsY的视频在最后三天无法观看</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df_usa_single_day_trend=df_usa.drop_duplicates(subset=<span class="string">'video_id'</span>, keep=<span class="literal">False</span>, inplace=<span class="literal">False</span>)</span><br><span class="line">df_usa_multiple_day_trend= df_usa.drop_duplicates(subset=<span class="string">'video_id'</span>,keep=<span class="string">'first'</span>,inplace=<span class="literal">False</span>)</span><br><span class="line">print(<span class="string">'出现在热门视频榜单一次'</span>,df_usa_single_day_trend.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'热门视频榜单保留第一次出现'</span>,df_usa_multiple_day_trend.shape[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>出现在热门视频榜单一次 544
+热门视频榜单保留第一次出现 4079</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 首次上榜出现[评论禁用][评级禁用][视频错误]的视频</span></span><br><span class="line">print(df_usa_multiple_day_trend.describe(include=[np.bool]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       comments_disabled ratings_disabled video_error_or_removed
+count               4079             4079                   4079
+unique                 2                2                      2
+top                False            False                  False
+freq                4015             4059                   4078</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 观看次数、喜欢和不喜欢次数、评论次数</span></span><br><span class="line">columns_show = [<span class="string">'views'</span>, <span class="string">'likes'</span>, <span class="string">'dislikes'</span>, <span class="string">'comment_count'</span>]</span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">8</span>, <span class="number">8</span>))</span><br><span class="line">corr = df_usa[columns_show].corr()</span><br><span class="line">sns.heatmap(corr, mask=np.zeros_like(corr, dtype=np.bool), cmap=sns.diverging_palette(<span class="number">220</span>, <span class="number">10</span>, as_cmap=<span class="literal">True</span>),</span><br><span class="line">            square=<span class="literal">True</span>, ax=ax,annot=<span class="literal">True</span>) <span class="comment">#np.zeros_like构造一个新矩阵，矩阵的大小同corr</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_13_0.png" alt="png"></p>
+<blockquote>
+<p><strong>观看次数、喜欢和不喜欢次数、评论次数相关性</strong></p>
+</blockquote>
+<ul>
+<li>评论数与不喜欢次数有较高的正相关，观众对不喜欢的视频会更多得表达自己的意见</li>
+<li>观看次数与喜欢次数有较高的正相关，在观看前会进行选择，还是倾向选择符合个人爱好的视频</li>
+<li>总体来看，四个字段都具有一些程度的正相关，往往比较热门的视频受众广泛，被观看得多，点赞与否定的也多，评论也多</li>
+</ul>
+<h2 id="三、影响力分析"><a href="#三、影响力分析" class="headerlink" title="三、影响力分析"></a>三、影响力分析</h2><h3 id="（一）热门视频时间趋势"><a href="#（一）热门视频时间趋势" class="headerlink" title="（一）热门视频时间趋势"></a>（一）热门视频时间趋势</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">date_count=df_usa.groupby([<span class="string">'trending_date'</span>])[<span class="string">'trending_date'</span>].agg(<span class="string">'count'</span>)</span><br><span class="line">print(<span class="string">'天数'</span>,len(date_count))</span><br><span class="line">print(<span class="string">'起始日期'</span>,date_count[<span class="number">0</span>:<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'结束日期'</span>,date_count[<span class="number">-1</span>:])</span><br><span class="line"><span class="comment">### 缺少1-10和1-11的数据</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>天数 95
+起始日期 trending_date
+2017-11-14    200
+Name: trending_date, dtype: int64
+结束日期 trending_date
+2018-02-18    200
+Name: trending_date, dtype: int64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">publish_hour=[<span class="number">0</span>]*<span class="number">24</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df_usa_multiple_day_trend.index:</span><br><span class="line">    temp=df_usa_multiple_day_trend[<span class="string">'publish_time'</span>].loc[i]</span><br><span class="line">    publish_hour[temp.hour]+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">9</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax=sns.barplot(x=np.arange(<span class="number">24</span>),y=publish_hour)</span><br><span class="line">plt.xlabel(<span class="string">"Publish_hour"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Best time to publish vide"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_19_1.png" alt="png"></p>
+<h3 id="（二）热门视频发布天数"><a href="#（二）热门视频发布天数" class="headerlink" title="（二）热门视频发布天数"></a>（二）热门视频发布天数</h3><h4 id="连续出现在热门视频榜单天数"><a href="#连续出现在热门视频榜单天数" class="headerlink" title="连续出现在热门视频榜单天数"></a>连续出现在热门视频榜单天数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_usa_video_trend_maximum=df_usa.groupby(by=[<span class="string">'video_id'</span>],as_index=<span class="literal">False</span>).count().sort_values(by=<span class="string">'trending_date'</span>,ascending=<span class="literal">False</span>)</span><br><span class="line">df_usa_video_trend_maximum[<span class="string">'trending_date'</span>].value_counts().plot.bar()</span><br><span class="line">plt.xticks(rotation=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13]),
+ &lt;a list of 14 Text xticklabel objects&gt;)</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_22_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df_usa_video_trend_maximum=df_usa.groupby(by=[<span class="string">'video_id'</span>],as_index=<span class="literal">False</span>).count().sort_values(by=<span class="string">'trending_date'</span>,ascending=<span class="literal">False</span>).head()</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax=sns.barplot(x=<span class="string">'video_id'</span>,y=<span class="string">'trending_date'</span>,data=df_usa_video_trend_maximum)</span><br><span class="line">plt.xlabel(<span class="string">"Video Id"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Top 5 Videos that trended maximum days in USA"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_23_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_usa[<span class="string">'publish_date'</span>]=pd.to_datetime(df_usa[<span class="string">'publish_date'</span>]) <span class="comment">#np.datetime64</span></span><br><span class="line">df_usa[<span class="string">'trending_date'</span>]=pd.to_datetime(df_usa[<span class="string">'trending_date'</span>])</span><br><span class="line">df_usa_multiple_day_trend= df_usa.drop_duplicates(subset=<span class="string">'video_id'</span>,keep=<span class="string">'first'</span>,inplace=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_usa_multiple_day_trend[<span class="string">'Days_taken'</span>]=<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df_usa_multiple_day_trend.index:</span><br><span class="line">    df_usa_multiple_day_trend[<span class="string">'Days_taken'</span>].loc[i]=(df_usa_multiple_day_trend[<span class="string">'trending_date'</span>].loc[i]- df_usa_multiple_day_trend[<span class="string">'publish_date'</span>].loc[i])/ np.timedelta64(<span class="number">1</span>, <span class="string">'D'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="从发布到成为热门视频需要天数"><a href="#从发布到成为热门视频需要天数" class="headerlink" title="从发布到成为热门视频需要天数"></a>从发布到成为热门视频需要天数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">usa_days=df_usa_multiple_day_trend.sort_values(by=<span class="string">'Days_taken'</span>,ascending=<span class="literal">False</span>).head(<span class="number">5</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=<span class="string">'title'</span>,y=<span class="string">'Days_taken'</span>, data=usa_days)</span><br><span class="line">plt.xlabel(<span class="string">"Video Title"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"No. of Days"</span>)</span><br><span class="line">plt.title(<span class="string">"Maximum no. of days taken by 5 videos to be popular in USA"</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">10</span>)</span><br><span class="line">plt.show()</span><br><span class="line">print(usa_days[[<span class="string">'video_id'</span>,<span class="string">'Days_taken'</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_27_1.png" alt="png"></p>
+<pre><code>          video_id  Days_taken
+16294  MJO3FmmFuh4      4215.0
+10710  UQtt9I6c-YM      3563.0
+2311   wFEAoF7RC7Y      3448.0
+2553   Y8JGfi4MJ8k      3398.0
+1136   rO_mAQC9bv0      3176.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_usa_multiple_day_trend[<span class="string">'Days_taken'</span>].value_counts().plot.hist()</span><br><span class="line">plt.xticks(rotation=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([-250.,    0.,  250.,  500.,  750., 1000., 1250., 1500., 1750.,
+        2000.]), &lt;a list of 10 Text xticklabel objects&gt;)</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_28_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa.loc[df_usa[<span class="string">'video_id'</span>]==<span class="string">'MJO3FmmFuh4'</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Budweiser百威啤酒广告  </p>
+<ul>
+<li>whazzup</li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Wassup? Whassup? There is still no consensus on how to spell this.<br> –Budweiser <strong>adland<a href="https://adland.tv/adnews/budweiser-true-wassup-girlfriend-2000-030-usa" target="_blank" rel="noopener">1</a></strong></p>
+</blockquote>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa[<span class="string">'description'</span>][<span class="number">16294</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;Original Whazzup ad - however, there is a little *glitch* in the middle...sorry.&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 发布当天成为热门视频个数</span></span><br><span class="line">usa_days=df_usa_multiple_day_trend.sort_values(by=<span class="string">'Days_taken'</span>,ascending=<span class="literal">True</span>)</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> usa_days.index:</span><br><span class="line">    count=count+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> usa_days[<span class="string">'Days_taken'</span>].loc[i]&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">print(<span class="string">'发布当天成为热门视频个数'</span>,count)</span><br></pre></td></tr></table></figure>
+
+<pre><code>发布当天成为热门视频个数 105</code></pre>
+<h3 id="（三）热门视频TOP频道"><a href="#（三）热门视频TOP频道" class="headerlink" title="（三）热门视频TOP频道"></a>（三）热门视频TOP频道</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">usa_trending_channel=df_usa_multiple_day_trend.groupby(by=[<span class="string">'channel_title'</span>],as_index=<span class="literal">False</span>).count().sort_values(by=<span class="string">'video_id'</span>,ascending=<span class="literal">False</span>).head()</span><br><span class="line"><span class="comment">#len(np.unique(df_usa_multiple_day_trend['channel_title']))  1796</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=<span class="string">'channel_title'</span>,y=<span class="string">'video_id'</span>, data=usa_trending_channel)</span><br><span class="line">plt.xlabel(<span class="string">"Channel Title"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Top 5 Trending Channel in USA"</span>)</span><br><span class="line">plt.show()</span><br><span class="line">print(usa_trending_channel[[<span class="string">'channel_title'</span>,<span class="string">'video_id'</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_34_1.png" alt="png"></p>
+<pre><code>                               channel_title  video_id
+1449  The Tonight Show Starring Jimmy Fallon        42
+1194                              Refinery29        39
+1464                            TheEllenShow        38
+714                        Jimmy Kimmel Live        36
+1028                                 Netflix        36</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">df_channel=df_usa_multiple_day_trend[[<span class="string">'channel_title'</span>,<span class="string">'comment_count'</span>]]</span><br><span class="line">df_channel_comment=df_channel.groupby([<span class="string">'channel_title'</span>]).mean().sort_values(by=<span class="string">'comment_count'</span>,ascending=<span class="literal">False</span>).head()</span><br><span class="line">df_channel_comment</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=df_channel_comment.index,y=<span class="string">'comment_count'</span>, data=df_channel_comment)</span><br><span class="line">plt.xlabel(<span class="string">"Channel Title"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Top 5 Trending Channel in USA"</span>)</span><br><span class="line">plt.show()</span><br><span class="line">print(df_channel_comment[[<span class="string">'comment_count'</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_35_1.png" alt="png"></p>
+<pre><code>                   comment_count
+channel_title                   
+Logan Paul Vlogs       416049.75
+ibighit                233969.00
+YouTube Spotlight      233550.50
+The ACE Family         179396.00
+Collins Key            116532.00</code></pre>
+<h3 id="（四）热门视频TOP类别"><a href="#（四）热门视频TOP类别" class="headerlink" title="（四）热门视频TOP类别"></a>（四）热门视频TOP类别</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">id_to_category = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"US_category_id.json"</span>,<span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    id_data = json.load(f)</span><br><span class="line">    <span class="keyword">for</span> category <span class="keyword">in</span> id_data[<span class="string">"items"</span>]:</span><br><span class="line">        id_to_category[category[<span class="string">"id"</span>]] = category[<span class="string">"snippet"</span>][<span class="string">"title"</span>]</span><br><span class="line"></span><br><span class="line">id_to_category</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>{&#39;1&#39;: &#39;Film &amp; Animation&#39;,
+ &#39;10&#39;: &#39;Music&#39;,
+ &#39;15&#39;: &#39;Pets &amp; Animals&#39;,
+ &#39;17&#39;: &#39;Sports&#39;,
+ &#39;18&#39;: &#39;Short Movies&#39;,
+ &#39;19&#39;: &#39;Travel &amp; Events&#39;,
+ &#39;2&#39;: &#39;Autos &amp; Vehicles&#39;,
+ &#39;20&#39;: &#39;Gaming&#39;,
+ &#39;21&#39;: &#39;Videoblogging&#39;,
+ &#39;22&#39;: &#39;People &amp; Blogs&#39;,
+ &#39;23&#39;: &#39;Comedy&#39;,
+ &#39;24&#39;: &#39;Entertainment&#39;,
+ &#39;25&#39;: &#39;News &amp; Politics&#39;,
+ &#39;26&#39;: &#39;Howto &amp; Style&#39;,
+ &#39;27&#39;: &#39;Education&#39;,
+ &#39;28&#39;: &#39;Science &amp; Technology&#39;,
+ &#39;29&#39;: &#39;Nonprofits &amp; Activism&#39;,
+ &#39;30&#39;: &#39;Movies&#39;,
+ &#39;31&#39;: &#39;Anime/Animation&#39;,
+ &#39;32&#39;: &#39;Action/Adventure&#39;,
+ &#39;33&#39;: &#39;Classics&#39;,
+ &#39;34&#39;: &#39;Comedy&#39;,
+ &#39;35&#39;: &#39;Documentary&#39;,
+ &#39;36&#39;: &#39;Drama&#39;,
+ &#39;37&#39;: &#39;Family&#39;,
+ &#39;38&#39;: &#39;Foreign&#39;,
+ &#39;39&#39;: &#39;Horror&#39;,
+ &#39;40&#39;: &#39;Sci-Fi/Fantasy&#39;,
+ &#39;41&#39;: &#39;Thriller&#39;,
+ &#39;42&#39;: &#39;Shorts&#39;,
+ &#39;43&#39;: &#39;Shows&#39;,
+ &#39;44&#39;: &#39;Trailers&#39;}</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_usa_multiple_day_trend[<span class="string">"category_id"</span>] = df_usa_multiple_day_trend[<span class="string">"category_id"</span>].astype(str)</span><br><span class="line">df_usa_multiple_day_trend.insert(<span class="number">4</span>, <span class="string">"category"</span>,df_usa_multiple_day_trend[<span class="string">"category_id"</span>].map(id_to_category))</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\ipykernel\__main__.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  if __name__ == &#39;__main__&#39;:</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">usa_category_id=df_usa_multiple_day_trend.groupby(by=[<span class="string">'category'</span>],as_index=<span class="literal">False</span>).count().sort_values(by=<span class="string">'video_id'</span>,ascending=<span class="literal">False</span>).head()</span><br><span class="line">plt.figure(figsize=(<span class="number">7</span>,<span class="number">7</span>))</span><br><span class="line"><span class="comment">#sns.kdeplot(usa_category_id['category_id']);</span></span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=<span class="string">'category'</span>,y=<span class="string">'video_id'</span>, data=usa_category_id)</span><br><span class="line">plt.xlabel(<span class="string">"Category"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Top 5 Category IDs for USA"</span>)</span><br><span class="line">plt.show()</span><br><span class="line">print(usa_category_id[[<span class="string">'category'</span>,<span class="string">'video_id'</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_39_1.png" alt="png"></p>
+<pre><code>          category  video_id
+3    Entertainment       996
+7            Music       523
+8  News &amp; Politics       395
+6    Howto &amp; Style       372
+1           Comedy       346</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_category=df_usa_multiple_day_trend[[<span class="string">'category'</span>,<span class="string">'likes'</span>,<span class="string">'dislikes'</span>]]</span><br><span class="line">df_category_iflike=df_category.groupby([<span class="string">'category'</span>]).mean()</span><br><span class="line">df_category_top=df_category_iflike.loc[[<span class="string">'Entertainment'</span>,<span class="string">'Music'</span>,<span class="string">'News &amp; Politics'</span>,<span class="string">'Howto &amp; Style'</span>,<span class="string">'Comedy'</span>]]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_category_top.plot()</span><br><span class="line">plt.xlabel(<span class="string">"Category"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.title(<span class="string">"Mean likes or dislikes of Top 5 Category"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_41_0.png" alt="png"></p>
+<h2 id="四、情感分析"><a href="#四、情感分析" class="headerlink" title="四、情感分析"></a>四、情感分析</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> RegexpTokenizer</span><br><span class="line"><span class="keyword">from</span> stop_words <span class="keyword">import</span> get_stop_words <span class="comment">#!对比nltk的停词表</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords</span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> sent_tokenize, word_tokenize</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, STOPWORDS</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 统计标题词频</span></span><br><span class="line">a = df_usa[<span class="string">'title'</span>].str.lower().str.cat(sep=<span class="string">' '</span>) <span class="comment">#转换为空格连接的文本串</span></span><br><span class="line">b = re.sub(<span class="string">'[^A-Za-z]+'</span>, <span class="string">' '</span>, a) <span class="comment">#只保留了英文字母--^从开头匹配；+号多个匹配</span></span><br><span class="line">stop_words = list(get_stop_words(<span class="string">'en'</span>))         </span><br><span class="line">nltk_words = [<span class="string">'i'</span>, <span class="string">'me'</span>, <span class="string">'my'</span>, <span class="string">'myself'</span>, <span class="string">'we'</span>, <span class="string">'our'</span>, <span class="string">'ours'</span>, <span class="string">'ourselves'</span>, <span class="string">'you'</span>, <span class="string">'your'</span>, <span class="string">'yours'</span>, <span class="string">'yourself'</span>, <span class="string">'yourselves'</span>, <span class="string">'he'</span>, <span class="string">'him'</span>, <span class="string">'his'</span>, <span class="string">'himself'</span>, <span class="string">'she'</span>, <span class="string">'her'</span>, <span class="string">'hers'</span>, <span class="string">'herself'</span>, <span class="string">'it'</span>, <span class="string">'its'</span>, <span class="string">'itself'</span>, <span class="string">'they'</span>, <span class="string">'them'</span>, <span class="string">'their'</span>, <span class="string">'theirs'</span>, <span class="string">'themselves'</span>, <span class="string">'what'</span>, <span class="string">'which'</span>, <span class="string">'who'</span>, <span class="string">'whom'</span>, <span class="string">'this'</span>, <span class="string">'that'</span>, <span class="string">'these'</span>, <span class="string">'those'</span>, <span class="string">'am'</span>, <span class="string">'is'</span>, <span class="string">'are'</span>, <span class="string">'was'</span>, <span class="string">'were'</span>, <span class="string">'be'</span>, <span class="string">'been'</span>, <span class="string">'being'</span>, <span class="string">'have'</span>, <span class="string">'has'</span>, <span class="string">'had'</span>, <span class="string">'having'</span>, <span class="string">'do'</span>, <span class="string">'does'</span>, <span class="string">'did'</span>, <span class="string">'doing'</span>, <span class="string">'a'</span>, <span class="string">'an'</span>, <span class="string">'the'</span>, <span class="string">'and'</span>, <span class="string">'but'</span>, <span class="string">'if'</span>, <span class="string">'or'</span>, <span class="string">'because'</span>, <span class="string">'as'</span>, <span class="string">'until'</span>, <span class="string">'while'</span>, <span class="string">'of'</span>, <span class="string">'at'</span>, <span class="string">'by'</span>, <span class="string">'for'</span>, <span class="string">'with'</span>, <span class="string">'about'</span>, <span class="string">'against'</span>, <span class="string">'between'</span>, <span class="string">'into'</span>, <span class="string">'through'</span>, <span class="string">'during'</span>, <span class="string">'before'</span>, <span class="string">'after'</span>, <span class="string">'above'</span>, <span class="string">'below'</span>, <span class="string">'to'</span>, <span class="string">'from'</span>, <span class="string">'up'</span>, <span class="string">'down'</span>, <span class="string">'in'</span>, <span class="string">'out'</span>, <span class="string">'on'</span>, <span class="string">'off'</span>, <span class="string">'over'</span>, <span class="string">'under'</span>, <span class="string">'again'</span>, <span class="string">'further'</span>, <span class="string">'then'</span>, <span class="string">'once'</span>, <span class="string">'here'</span>, <span class="string">'there'</span>, <span class="string">'when'</span>, <span class="string">'where'</span>, <span class="string">'why'</span>, <span class="string">'how'</span>, <span class="string">'all'</span>, <span class="string">'any'</span>, <span class="string">'both'</span>, <span class="string">'each'</span>, <span class="string">'few'</span>, <span class="string">'more'</span>, <span class="string">'most'</span>, <span class="string">'other'</span>, <span class="string">'some'</span>, <span class="string">'such'</span>, <span class="string">'no'</span>, <span class="string">'nor'</span>, <span class="string">'not'</span>, <span class="string">'only'</span>, <span class="string">'own'</span>, <span class="string">'same'</span>, <span class="string">'so'</span>, <span class="string">'than'</span>, <span class="string">'too'</span>, <span class="string">'very'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'can'</span>, <span class="string">'will'</span>, <span class="string">'just'</span>, <span class="string">'don'</span>, <span class="string">'should'</span>, <span class="string">'now'</span>]</span><br><span class="line"><span class="comment">#nltk.download("stopwords") #！连接失败 http://www.nltk.org/nltk_data/ http://johnlaudun.org/20130126-nltk-stopwords/</span></span><br><span class="line">stop_words.extend(nltk_words)</span><br><span class="line">word_tokens = word_tokenize(b) <span class="comment">#nltk分词!tokenize</span></span><br><span class="line">filtered_word = [w <span class="keyword">for</span> w <span class="keyword">in</span> word_tokens <span class="keyword">if</span> <span class="keyword">not</span> w <span class="keyword">in</span> stop_words] </span><br><span class="line">print(<span class="string">"nltk分词后词语个数"</span>,len(filtered_word))</span><br><span class="line"><span class="comment">## 去掉长度小于等于2词语</span></span><br><span class="line">processed_word = [word <span class="keyword">for</span> word <span class="keyword">in</span> filtered_word <span class="keyword">if</span> len(word) &gt; <span class="number">2</span>]</span><br><span class="line">print(<span class="string">"处理过后词语个数"</span>,len(processed_word))</span><br><span class="line">word_dist = nltk.FreqDist(processed_word)</span><br></pre></td></tr></table></figure>
+
+<pre><code>nltk分词后词语个数 114272
+处理过后词语个数 108729</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">topn=<span class="number">100</span></span><br><span class="line">rslt = pd.DataFrame(word_dist.most_common(topn),</span><br><span class="line">                    columns=[<span class="string">'Word'</span>, <span class="string">'Frequency'</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=<span class="string">"Word"</span>,y=<span class="string">"Frequency"</span>, data=rslt.head(<span class="number">5</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_45_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 词云图</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wc</span><span class="params">(data,bgcolor,title)</span>:</span></span><br><span class="line">    plt.figure(figsize = (<span class="number">15</span>,<span class="number">15</span>))</span><br><span class="line">    wc = WordCloud(background_color = bgcolor, max_words = <span class="number">1000</span>,  max_font_size = <span class="number">50</span>)</span><br><span class="line">    wc.generate(<span class="string">' '</span>.join(data))</span><br><span class="line">    plt.imshow(wc)</span><br><span class="line">    plt.axis(<span class="string">'off'</span>)</span><br><span class="line">wc(processed_word,<span class="string">'black'</span>,<span class="string">'Common Words'</span> )</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_46_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> textblob <span class="keyword">import</span> TextBlob</span><br><span class="line"><span class="comment">#https://planspace.org/20150607-textblob_sentiment/ 计算公式</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bloblist_title=[]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> df_usa_multiple_day_trend[<span class="string">'title'</span>]:</span><br><span class="line">    blob = TextBlob(row)</span><br><span class="line">    bloblist_title.append((row,blob.sentiment.polarity, blob.sentiment.subjectivity))</span><br><span class="line">    df_usa_polarity_title = pd.DataFrame(bloblist_title, columns = [<span class="string">'sentence'</span>,<span class="string">'sentiment'</span>,<span class="string">'polarity'</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f_title</span><span class="params">(df_usa_polarity_title)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> df_usa_polarity_title[<span class="string">'sentiment'</span>] &gt; <span class="number">0</span>:</span><br><span class="line">        val = <span class="string">"Positive"</span></span><br><span class="line">    <span class="keyword">elif</span> df_usa_polarity_title[<span class="string">'sentiment'</span>] == <span class="number">0</span>:</span><br><span class="line">        val = <span class="string">"Neutral"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        val = <span class="string">"Negative"</span></span><br><span class="line">    <span class="keyword">return</span> val</span><br><span class="line"></span><br><span class="line">df_usa_polarity_title[<span class="string">'Sentiment_Type'</span>] = df_usa_polarity_title.apply(f_title, axis=<span class="number">1</span>)  <span class="comment">#df_usa_polarity_title.loc[14]['sentiment']</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa_polarity_title[<span class="string">'category'</span>]=list(df_usa_multiple_day_trend[<span class="string">'category'</span>])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=df_usa_polarity_title[[<span class="string">'Sentiment_Type'</span>,<span class="string">'sentiment'</span>]].groupby(<span class="string">'Sentiment_Type'</span>).count()</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">ax = sns.barplot(x=a.index,y=<span class="string">"sentiment"</span>, data=a)</span><br><span class="line">plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_50_1.png" alt="png"></p>
+<h3 id="分类别视频情感分析"><a href="#分类别视频情感分析" class="headerlink" title="分类别视频情感分析"></a>分类别视频情感分析</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa_category_polar=df_usa_polarity_title[[<span class="string">'category'</span>,<span class="string">'Sentiment_Type'</span>,<span class="string">'sentiment'</span>]].groupby([<span class="string">'category'</span>,<span class="string">'Sentiment_Type'</span>]).count()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_usa_category_polar.plot.bar()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1f60e7d1080&gt;</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_53_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="string">'Entertainment'</span>,<span class="string">'Music'</span>,<span class="string">'News &amp; Politics'</span>,<span class="string">'Howto &amp; Style'</span>,<span class="string">'Comedy'</span>]:</span><br><span class="line">    a=df_usa_category_polar.ix[[i]]</span><br><span class="line">    print(a)</span><br><span class="line">    plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">    sns.set_style(<span class="string">"whitegrid"</span>)</span><br><span class="line">    ax = sns.barplot(x=a.index.levels[<span class="number">1</span>],y=<span class="string">"sentiment"</span>, data=a)</span><br><span class="line">    plt.ylabel(<span class="string">"Count"</span>)</span><br><span class="line">    plt.title(i)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>                              sentiment
+category      Sentiment_Type           
+Entertainment Negative              139
+              Neutral               559
+              Positive              298
+
+
+D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_54_2.png" alt="png"></p>
+<pre><code>                         sentiment
+category Sentiment_Type           
+Music    Negative               54
+         Neutral               308
+         Positive              161
+
+
+D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_54_5.png" alt="png"></p>
+<pre><code>                                sentiment
+category        Sentiment_Type           
+News &amp; Politics Negative               76
+                Neutral               230
+                Positive               89
+
+
+D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_54_8.png" alt="png"></p>
+<pre><code>                              sentiment
+category      Sentiment_Type           
+Howto &amp; Style Negative               50
+              Neutral               205
+              Positive              117
+
+
+D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_54_11.png" alt="png"></p>
+<pre><code>                         sentiment
+category Sentiment_Type           
+Comedy   Negative               51
+         Neutral               205
+         Positive               90
+
+
+D:\jupyter\lib\site-packages\seaborn\categorical.py:342: DeprecationWarning: pandas.core.common.is_categorical_dtype is deprecated. import from the public API: pandas.api.types.is_categorical_dtype instead
+  elif is_categorical(y):</code></pre>
+<p><img src="/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/output_54_14.png" alt="png"></p>
+<h2 id="五、主题探测"><a href="#五、主题探测" class="headerlink" title="五、主题探测"></a>五、主题探测</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> LatentDirichletAllocation</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer </span><br><span class="line"><span class="keyword">import</span> pyLDAvis</span><br><span class="line"><span class="keyword">import</span> pyLDAvis.sklearn</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entertainment_title= df_usa_multiple_day_trend[<span class="string">"title"</span>][(df_usa_multiple_day_trend[<span class="string">'category'</span>] == <span class="string">'Entertainment'</span>)] </span><br><span class="line">music_title= df_usa_multiple_day_trend[<span class="string">"title"</span>][(df_usa_multiple_day_trend[<span class="string">'category'</span>] == <span class="string">'Music'</span>)] </span><br><span class="line">news_politics_title= df_usa_multiple_day_trend[<span class="string">"title"</span>][(df_usa_multiple_day_trend[<span class="string">'category'</span>] == <span class="string">'News &amp; Politics'</span>)] </span><br><span class="line">style_title= df_usa_multiple_day_trend[<span class="string">"title"</span>][(df_usa_multiple_day_trend[<span class="string">'category'</span>] == <span class="string">'Howto &amp; Style'</span>)] </span><br><span class="line">comedy_title= df_usa_multiple_day_trend[<span class="string">"title"</span>][(df_usa_multiple_day_trend[<span class="string">'category'</span>] == <span class="string">'Comedy'</span>)]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_entertainment_title = CountVectorizer(min_df=<span class="number">5</span>, max_df=<span class="number">0.9</span>, stop_words=<span class="string">'english'</span>, lowercase=<span class="literal">True</span>, token_pattern=<span class="string">'[a-zA-Z\-][a-zA-Z\-]&#123;2,&#125;'</span>)</span><br><span class="line"><span class="comment">#token_pattern</span></span><br><span class="line">entertainment_title_vectorized = vectorizer_entertainment_title.fit_transform(entertainment_title)</span><br><span class="line">lda_popular_entertainment_title_vectorized = LatentDirichletAllocation(n_topics=<span class="number">7</span>, max_iter=<span class="number">5</span>, learning_method=<span class="string">'online'</span>)</span><br><span class="line">entertainment_title_vectorized_lda = lda_popular_entertainment_title_vectorized.fit_transform(entertainment_title_vectorized )</span><br><span class="line"></span><br><span class="line">dash = pyLDAvis.sklearn.prepare(lda_popular_entertainment_title_vectorized,entertainment_title_vectorized, vectorizer_entertainment_title, mds=<span class="string">'tsne'</span>)</span><br><span class="line">pyLDAvis.show(dash)</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_music_title = CountVectorizer(min_df=<span class="number">5</span>, max_df=<span class="number">0.9</span>, stop_words=<span class="string">'english'</span>, lowercase=<span class="literal">True</span>, token_pattern=<span class="string">'[a-zA-Z\-][a-zA-Z\-]&#123;2,&#125;'</span>)</span><br><span class="line">music_title_vectorized = vectorizer_music_title.fit_transform(music_title)</span><br><span class="line"></span><br><span class="line">lda_music_title_vectorized= LatentDirichletAllocation(n_topics=<span class="number">6</span>, max_iter=<span class="number">5</span>, learning_method=<span class="string">'online'</span>)</span><br><span class="line">music_title_vectorized_lda = lda_music_title_vectorized.fit_transform(music_title_vectorized )</span><br><span class="line"></span><br><span class="line">dash = pyLDAvis.sklearn.prepare(lda_music_title_vectorized,music_title_vectorized, vectorizer_music_title , mds=<span class="string">'tsne'</span>)</span><br><span class="line">pyLDAvis.show(dash)</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_news_politics_title = CountVectorizer(min_df=<span class="number">5</span>, max_df=<span class="number">0.9</span>, stop_words=<span class="string">'english'</span>, lowercase=<span class="literal">True</span>, token_pattern=<span class="string">'[a-zA-Z\-][a-zA-Z\-]&#123;2,&#125;'</span>)</span><br><span class="line">news_politics_title_vectorized = vectorizer_news_politics_title.fit_transform(news_politics_title)</span><br><span class="line">lda_news_politics_title_vectorized= LatentDirichletAllocation(n_topics=<span class="number">7</span>, max_iter=<span class="number">5</span>, learning_method=<span class="string">'online'</span>,verbose=<span class="literal">True</span>)</span><br><span class="line">news_politics_title_vectorized_lda = lda_news_politics_title_vectorized.fit_transform(news_politics_title_vectorized )</span><br><span class="line"></span><br><span class="line">dash = pyLDAvis.sklearn.prepare(lda_news_politics_title_vectorized,news_politics_title_vectorized, vectorizer_news_politics_title , mds=<span class="string">'tsne'</span>)</span><br><span class="line">pyLDAvis.show(dash)</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_style_title = CountVectorizer(min_df=<span class="number">5</span>, max_df=<span class="number">0.9</span>, stop_words=<span class="string">'english'</span>, lowercase=<span class="literal">True</span>, token_pattern=<span class="string">'[a-zA-Z\-][a-zA-Z\-]&#123;2,&#125;'</span>)</span><br><span class="line">style_title_vectorized = vectorizer_style_title.fit_transform(style_title)</span><br><span class="line">lda_style_title_vectorized= LatentDirichletAllocation(n_topics=<span class="number">7</span>, max_iter=<span class="number">5</span>, learning_method=<span class="string">'online'</span>,verbose=<span class="literal">True</span>)</span><br><span class="line">style_title_vectorized_lda = lda_style_title_vectorized.fit_transform(style_title_vectorized )</span><br><span class="line"></span><br><span class="line">dash = pyLDAvis.sklearn.prepare(lda_style_title_vectorized,style_title_vectorized, vectorizer_style_title , mds=<span class="string">'tsne'</span>)</span><br><span class="line">pyLDAvis.show(dash)</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_comedy_title = CountVectorizer(min_df=<span class="number">5</span>, max_df=<span class="number">0.9</span>, stop_words=<span class="string">'english'</span>, lowercase=<span class="literal">True</span>, token_pattern=<span class="string">'[a-zA-Z\-][a-zA-Z\-]&#123;2,&#125;'</span>)</span><br><span class="line">comedy_title_vectorized = vectorizer_comedy_title.fit_transform(comedy_title)</span><br><span class="line">lda_comedy_title_vectorized= LatentDirichletAllocation(n_topics=<span class="number">7</span>, max_iter=<span class="number">5</span>, learning_method=<span class="string">'online'</span>,verbose=<span class="literal">True</span>)</span><br><span class="line">comedy_title_vectorized_lda = lda_comedy_title_vectorized.fit_transform(comedy_title_vectorized )</span><br><span class="line"></span><br><span class="line">dash = pyLDAvis.sklearn.prepare(lda_comedy_title_vectorized,comedy_title_vectorized, vectorizer_comedy_title , mds=<span class="string">'tsne'</span>)</span><br><span class="line">pyLDAvis.show(dash)</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://raina-fighting.github.io/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/>http://raina-fighting.github.io/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-09T17:43:24+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 9, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>文本分析</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%9D%E9%A2%98%E6%8C%96%E6%8E%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>话题挖掘</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>情感分析</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://raina-fighting.github.io/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/&title=YouTube网站的视频营销分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://raina-fighting.github.io/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/&title=YouTube网站的视频营销分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://raina-fighting.github.io/2019/08/08/YouTube%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91%E8%90%A5%E9%94%80%E5%88%86%E6%9E%90/&title=YouTube网站的视频营销分析 - Raina&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/08/10/%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>中文文本处理</p>
+                <p class='content'>中文文本处理
+
+
+本研究系同学共同成果，此部分仅限分词代码
+
+
+结巴模块分词训练1234567891011121314151617import jieba'''jieba加载词典'''jieba...</p>
+              </a>
+            
+            
+              <a class='next' href='/2019/04/03/hello-hexo/'>
+                <p class='title'>hello-hexo<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Hello,Hexo.Hello,April.
+</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'YouTube网站的视频营销分析',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二、描述分析"><span class="toc-text">二、描述分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、影响力分析"><span class="toc-text">三、影响力分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）热门视频时间趋势"><span class="toc-text">（一）热门视频时间趋势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）热门视频发布天数"><span class="toc-text">（二）热门视频发布天数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#连续出现在热门视频榜单天数"><span class="toc-text">连续出现在热门视频榜单天数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从发布到成为热门视频需要天数"><span class="toc-text">从发布到成为热门视频需要天数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）热门视频TOP频道"><span class="toc-text">（三）热门视频TOP频道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）热门视频TOP类别"><span class="toc-text">（四）热门视频TOP类别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、情感分析"><span class="toc-text">四、情感分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类别视频情感分析"><span class="toc-text">分类别视频情感分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、主题探测"><span class="toc-text">五、主题探测</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作為主題，總訪問量為
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com/" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
