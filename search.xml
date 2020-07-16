@@ -136,9 +136,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 文本分析 </tag>
+            
+            <tag> python </tag>
             
             <tag> 数据流 </tag>
             
@@ -198,11 +198,11 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> 图像分类 </tag>
             
             <tag> 神经网络 </tag>
-            
-            <tag> python </tag>
             
         </tags>
       
@@ -227,11 +227,11 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 文本分析 </tag>
             
             <tag> 分词 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -258,9 +258,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 文本分析 </tag>
+            
+            <tag> python </tag>
             
             <tag> 话题挖掘 </tag>
             
